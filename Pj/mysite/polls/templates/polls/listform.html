@@ -1,0 +1,7 @@
+<p>TuLe</p>
+
+{%for list in listform%}
+            {%if list.user_id == request.user%}
+                <li><a href="{%url 'polls:question' list.id%}">{{list.recruiment_id.name}}</a></li>
+            {%endif%}
+{%endfor%}

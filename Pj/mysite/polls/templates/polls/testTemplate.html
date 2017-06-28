@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {%if recruitment%}
+        <ul>
+            {%for name in recruitment%}
+            <li><a href="{% url 'polls:detailform' name.id %}">{{ name.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {%else%}
+        <p>No polls are available.</p>
+    {%endif%}
+</body>
+</html>
