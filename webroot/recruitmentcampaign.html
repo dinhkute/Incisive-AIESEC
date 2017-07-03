@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	 <title>AIESEC Information System</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+	 <link href = "image/shortlogo.jpg" rel="icon" type="image">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" />
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
+	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+	 <script src="js/tooltip.js"></script>
+	 <!-- <script src="js/myApp.js"></script><script src="js/myApp.js"></script> -->
+	 <!-- <script src="lib/angular.min.js"></script><script src="lib/angular.min.js"></script> -->
+	 <!-- <script src="lib/angular-route.min.js"></script><script src="lib/angular-route.min.js"></script> -->
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+	 <script src="js/bootstrap-datetimepicker.min.js"></script>
+	 <script src="js/bootstrap-datetimepicker.js"></script>
+	 <script src="js/bootstrap-datetimepicker.uk.js"></script>
+
+	
+</head>
+
+<body>
+	 <nav class="navbar navbar-default; navbar navbar-default navbar-fixed-top">
+		 <div class="container-fluid">
+			 <div class="navbar-header; overflow:hidden">
+				 <a class="navbar-brand" href="#"><img src="image/logo.jpg" class="img-responsive" alt="Logo"></a>
+			 </div>
+			 <ul class="nav navbar-nav">
+				 <li><a href="#">Recruitment Management</a></li>
+				 <li><a href="#">Members Management</a></li>
+				 <li><a href="#">Engagement Management</a></li>
+				 <li><a href="#">Customers Management</a></li>
+			 </ul>
+			 <ul class="nav navbar-nav navbar-right">
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, Vy<span class="caret"></span></a>
+  					 <ul class="dropdown-menu">
+						 <li><a href="#">My Profile</a></li>
+						 <li><a href="#">Log Out</a></li>
+					 </ul>
+				 </li>
+			 </ul>
+		 </div>
+	 </nav>
+	 <div ng-view>
+	 </div>
+
+<!--Recruitment Campaign-->
+	 <div class="container-fluid" style="margin-top:80px">
+		 <div class="row">
+			 <div class="col-sm-12">
+				 <h3><strong>Recruitment Campaign</strong></h3>
+			 </div>
+		 </div>
+		 <div class="row">
+			 <div class="col-sm-4">
+				 <select name="colors" class="form-control select2-select" multiple data-placeholder="Local Committee">
+					 <option value="rmit">AIESEC RMIT Vietnam</option>
+					 <option value="ftu hcm">AIESEC FTU HCM</option>
+					 <option value="hcm">AIESEC HCM</option>
+				 </select>
+			 </div>
+			 <div class="col-sm-4">
+				  <select name="colors" class="form-control select2-select" multiple data-placeholder="Status">
+					 <option value="running">Running</option>
+					 <option value="draft">Draft</option>
+					 <option value="closed">Closed</option>
+				 </select>
+			 </div>
+			 <div class="col-sm-4">
+				 <button type="button" class="btn btn-blue"><span class="fa fa-filter"></span></button>
+				 <button type="button" class="btn btn-white"><span class="fa fa-times"></span></button>
+			 </div>
+		 </div>
+		 <br>
+		 <div class="row">
+			 <div class="col-sm-12">
+				 <button type="button" class="btn btn-green" onClick="location.href='recruitmentcampaigncreate.html'"><span class="fa fa-plus"></span> New Campaign</button>
+				 <br><br>
+				 <table class="table table-hover">
+					 <thead>
+						 <tr>
+							 <th></th>
+							 <th>Campaign Name</th>
+							 <th>Local Committee</th>
+							 <th>Status</th>
+							 <th>Duration</th>
+							 <th>Campaign Leader</th>
+							 <th></th>
+						 </tr>
+					 </thead>
+					 <tbody>
+						 <tr>
+							 <td>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-edit" onClick="location.href='recruitmentcampaignedit.html'"></span></button>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-users"></span></button>
+							 </td>
+							 <td>Recruitment Sem B 2017</td>
+							 <td>AIESEC RMIT</td>
+							 <td>Draft</td>
+							 <td>01/06/2017 - 30/06/2017</td>
+							 <td>Lam Thu Ngoc Vy</td>
+							 <td><button type="button" class="btn btn-red"><span class="fa fa-trash-o"></span></button></td>
+						 </tr>
+						 <tr>
+							 <td>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-edit"></span></button>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-users"></span></button>
+							 </td>
+							 <td>Recruitment Sem B 2017</td>
+							 <td>AIESEC RMIT</td>
+							 <td>Draft</td>
+							 <td>01/06/2017 - 30/06/2017</td>
+							 <td>Lam Thu Ngoc Vy</td>
+							 <td><button type="button" class="btn btn-red"><span class="fa fa-trash-o"></span></button></td>
+						 </tr>
+						 <tr>
+							 <td>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-edit"></span></button>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-users"></span></button>
+							 </td>
+							 <td>Recruitment Sem B 2017</td>
+							 <td>AIESEC RMIT</td>
+							 <td>Draft</td>
+							 <td>01/06/2017 - 30/06/2017</td>
+							 <td>Lam Thu Ngoc Vy</td>
+							 <td><button type="button" class="btn btn-red"><span class="fa fa-trash-o"></span></button></td>
+						 </tr>
+					 </tbody>
+				 </table>
+				 <div align="center">
+					 <ul class="pagination">
+						 <li><a href="#">1</a></li>
+						 <li><a href="#">2</a></li>
+						 <li><a href="#">3</a></li>
+						 <li><a href="#">4</a></li>
+						 <li><a href="#">5</a></li>
+					 </ul>
+				 </div>	
+			 </div>
+		 </div>
+	 </div>
+</body>
+<footer></footer>
+	 <script type="text/javascript">
+	 $('select').select2();
+	 </script>
