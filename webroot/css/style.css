@@ -29,6 +29,11 @@
   color: #fff;
   border-color: #00cc33;		
 }
+.btn-green-disabled {
+	color: #00cc33;
+	border-color: #00cc33;
+}
+
 
 .btn-blue {
 	color: #3d90d6;
@@ -58,6 +63,10 @@
   background: #ff0000;
   color: #fff;
   border-color: #ff0000;	
+}
+.btn-red-disabled {
+	color: #ff0000;
+	border-color: #ff0000;
 }
 
 .btn-white {
