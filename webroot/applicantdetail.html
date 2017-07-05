@@ -1,0 +1,526 @@
+	 <title>AIESEC Information System</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+	 <link href = "image/shortlogo.jpg" rel="icon" type="image">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" />
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
+	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+	 <script src="js/tooltip.js"></script>
+	 <!-- <script src="js/myApp.js"></script><script src="js/myApp.js"></script> -->
+	 <!-- <script src="lib/angular.min.js"></script><script src="lib/angular.min.js"></script> -->
+	 <!-- <script src="lib/angular-route.min.js"></script><script src="lib/angular-route.min.js"></script> -->
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+	 <script src="js/bootstrap-datetimepicker.min.js"></script>
+	 <script src="js/bootstrap-datetimepicker.js"></script>
+	 <script src="js/bootstrap-datetimepicker.uk.js"></script>
+</head>
+
+<body>
+	 <nav class="navbar navbar-default; navbar navbar-default navbar-fixed-top">
+		 <div class="container-fluid">
+			 <div class="navbar-header; overflow:hidden">
+				 <a class="navbar-brand" href="#"><img src="image/logo.jpg" class="img-responsive" alt="Logo"></a>
+			 </div>
+			 <ul class="nav navbar-nav">
+				 <li><a href="#">Recruitment Management</a></li>
+				 <li><a href="#">Members Management</a></li>
+				 <li><a href="#">Engagement Management</a></li>
+				 <li><a href="#">Customers Management</a></li>
+			 </ul>
+			 <ul class="nav navbar-nav navbar-right">
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, Vy<span class="caret"></span></a>
+  					 <ul class="dropdown-menu">
+						 <li><a href="#">My Profile</a></li>
+						 <li><a href="#">Log Out</a></li>
+					 </ul>
+				 </li>
+			 </ul>
+		 </div>
+	 </nav>
+	 <div ng-view>
+	 </div>
+
+<!--Recruitment Campaign-->
+	 <div class="container-fluid" style="margin-top:80px">
+		 <div class="row">
+			 <div class="col-sm-12">
+				 <h3><strong>Nguyen Gia Hien - Application Process</strong></h3>
+			 </div>
+		 </div>
+		 <br>
+		 <div class="row">
+			 <div class="col-sm-2">
+			 </div>
+			 <div class="col-sm-2" align="center">
+				 <i class="fa fa-check-circle fa-3x passed-icon" data-toggle="tooltip" title="Passed"></i>
+			 </div>
+			 <div class="col-sm-2" align="center">
+				 <i class="fa fa-times-circle fa-3x failed-icon" data-toggle="tooltip" title="Failed"></i>
+			 </div>
+			 <div class="col-sm-2" align="center">
+				 <i class="fa fa-circle-thin fa-3x blank-icon" data-toggle="tooltip" title="Not yet"></i>
+			 </div>
+			 <div class="col-sm-2" align="center">
+				 <i class="fa fa-circle-thin fa-3x blank-icon" data-toggle="tooltip" title="Not yet"></i>
+			 </div>
+			 <div class="col-sm-2">
+			 </div>
+		 </div>
+		 <br><br>
+		 <div class="row">
+			 <div class="col-sm-12">
+				 <ul class="nav nav-tabs">
+					 <li class="active"><a data-toggle="tab" href="#general-info">General Information</a></li>
+					 <li><a data-toggle="tab" href="#round-1">Round 1</a></li>
+					 <li><a data-toggle="tab" href="#round-2">Round 2</a></li>
+					 <li><a data-toggle="tab" href="#round-3">Round 3</a></li>
+				 </ul>
+			 </div>
+		 </div>
+		 <div class="row">
+			 <div class="col-sm-12">
+				 <div class="tab-content">
+					 <div id="general-info" class="tab-pane fade in active">
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Full Name</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Nguyen Gia Hien
+							 </div>
+							 <div class="col-sm-2">
+								 <label>University</label>
+							 </div>
+							 <div class="col-sm-4">
+								 RMIT Univeristy Vietnam
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Date of Birth</label>
+							 </div>
+							 <div class="col-sm-4">
+								 02/03/1998
+							 </div>
+							 <div class="col-sm-2">
+								 <label>Graduation Year</label>
+							 </div>
+							 <div class="col-sm-4">
+								 2020
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Gender</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Male
+							 </div>
+							 <div class="col-sm-2">
+								 <label>Language</label>
+							 </div>
+							 <div class="col-sm-4">
+								 English, Vietnamese
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Phone Number</label>
+							 </div>
+							 <div class="col-sm-4">
+								 1234567
+							 </div>
+							 <div class="col-sm-2">
+								 <label>Email</label>
+							 </div>
+							 <div class="col-sm-4">
+								 giahien23@gmail.com
+							 </div>
+						 </div>
+					 </div>
+					 <div id="round-1" class="tab-pane fade">
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-6">
+								 <label>Q1.xxxxxxx</label>
+								 <p>answer here xxxx</p>
+							 </div>
+							 <div class="col-sm-6">
+								 <label>Q2. xxxxx</label>
+								 <p>answer herre xxx</p>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-6">
+								 <label>Q1.xxxxxxx</label>
+								 <p>answer here xxxx</p>
+							 </div>
+							 <div class="col-sm-6">
+								 <label>Q2. xxxxx</label>
+								 <p>answer herre xxx</p>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-6">
+								 <label>Q1.xxxxxxx</label>
+								 <p>answer here xxxx</p>
+							 </div>
+							 <div class="col-sm-6">
+								 <label>Q2. xxxxx</label>
+								 <p>answer herre xxx</p>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-12">
+								 <label>Recruiter Comment</label>
+								 <textarea class="form-control" rows="3" id="round-1-comment">
+								 </textarea>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-12" align="center">
+								 <button type="submit" class="btn btn-green">Save</button>
+								 <button type="submit" class="btn btn-green">Approve</button>
+								 <button type="submit" class="btn btn-red">Refuse</button>
+							 </div>
+						 </div>
+					 </div>
+					 <div id="round-2" class="tab-pane fade">
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <h4><strong>Competency</strong></h4>
+							 </div>
+							 <div class="col-sm-4">
+								 <h4><strong>Description</strong></h4>
+							 </div>
+							 <div class="col-sm-2">
+								 <h4><strong>Mark</strong></h4>
+							 </div>
+							 <div class="col-sm-4">
+								 <h4><strong>Comment</strong></h4>
+							 </div>
+						 </div>
+						  <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Communication</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Mazim possim adipisci sea ei, omnium aeterno platonem mei no.
+							 </div>
+							 <div class="col-sm-1">
+								 <select class="js-example-basic-single">
+									 <option>1</option>
+									 <option>2</option>
+									 <option>3</option>
+									 <option>4</option>
+									 <option>5</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-5">
+								 <textarea class="form-control" rows="2" id="round-2-comment-1"></textarea>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Team Work</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Mazim possim adipisci sea ei, omnium aeterno platonem mei no.
+							 </div>
+							 <div class="col-sm-1">
+								 <select class="js-example-basic-single">
+									 <option>1</option>
+									 <option>2</option>
+									 <option>3</option>
+									 <option>4</option>
+									 <option>5</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-5">
+								 <textarea class="form-control" rows="2" id="round-2-comment-1"></textarea>
+							 </div>
+						 </div>
+						  <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Team Work</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Mazim possim adipisci sea ei, omnium aeterno platonem mei no.
+							 </div>
+							 <div class="col-sm-1">
+								 <select class="js-example-basic-single">
+									 <option>1</option>
+									 <option>2</option>
+									 <option>3</option>
+									 <option>4</option>
+									 <option>5</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-5">
+								 <textarea class="form-control" rows="2" id="round-2-comment-1"></textarea>
+							 </div>
+						 </div>
+						 <br>
+						 <hr>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Assessor</label>&nbsp
+								 <select class="js-example-basic-single">
+									 <option>Lam Thu Ngoc Vy</option>
+									 <option>Le Nguyen Dat</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-1">
+								 <label>Mark Overview</label>
+							 </div>
+							 <div class="col-sm-3">
+								 <table class="table table-hover">
+									 <tbody>
+										 <tr>
+											 <td>Communication</td>
+											 <td>2</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+									 </tbody>
+								 </table>
+							 </div>
+							 <div class="col-sm-3">
+								 <table class="table table-hover">
+									 <tbody>
+										 <tr>
+											 <td>Communication</td>
+											 <td>2</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+									 </tbody>
+								 </table>
+							 </div>
+							 <div class="col-sm-3">
+								 <table class="table table-hover">
+									 <tbody>
+										 <tr>
+											 <td>Communication</td>
+											 <td>2</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+									 </tbody>
+								 </table>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-12" align="center">
+								 <button type="submit" class="btn btn-green">Save</button>
+								 <button type="submit" class="btn btn-green-disabled" disabled>Approve</button>
+								 <button type="ssubmit" class="btn btn-red-disabled" disabled>Refuse</button>
+							 </div>
+						 </div>
+					 </div>
+					 <div id="round-3" class="tab-pane fade">
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <h4><strong>Competency</strong></h4>
+							 </div>
+							 <div class="col-sm-4">
+								 <h4><strong>Description</strong></h4>
+							 </div>
+							 <div class="col-sm-2">
+								 <h4><strong>Mark</strong></h4>
+							 </div>
+							 <div class="col-sm-4">
+								 <h4><strong>Comment</strong></h4>
+							 </div>
+						 </div>
+						  <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Communication</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Mazim possim adipisci sea ei, omnium aeterno platonem mei no.
+							 </div>
+							 <div class="col-sm-1">
+								 <select class="js-example-basic-single">
+									 <option>1</option>
+									 <option>2</option>
+									 <option>3</option>
+									 <option>4</option>
+									 <option>5</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-5">
+								 <textarea class="form-control" rows="2" id="round-2-comment-1"></textarea>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Team Work</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Mazim possim adipisci sea ei, omnium aeterno platonem mei no.
+							 </div>
+							 <div class="col-sm-1">
+								 <select class="js-example-basic-single">
+									 <option>1</option>
+									 <option>2</option>
+									 <option>3</option>
+									 <option>4</option>
+									 <option>5</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-5">
+								 <textarea class="form-control" rows="2" id="round-2-comment-1"></textarea>
+							 </div>
+						 </div>
+						  <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Team Work</label>
+							 </div>
+							 <div class="col-sm-4">
+								 Mazim possim adipisci sea ei, omnium aeterno platonem mei no.
+							 </div>
+							 <div class="col-sm-1">
+								 <select class="js-example-basic-single">
+									 <option>1</option>
+									 <option>2</option>
+									 <option>3</option>
+									 <option>4</option>
+									 <option>5</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-5">
+								 <textarea class="form-control" rows="2" id="round-2-comment-1"></textarea>
+							 </div>
+						 </div>
+						 <br>
+						 <hr>
+						 <div class="row">
+							 <div class="col-sm-2">
+								 <label>Assessor</label>&nbsp
+								 <select class="js-example-basic-single">
+									 <option>Lam Thu Ngoc Vy</option>
+									 <option>Le Nguyen Dat</option>
+								 </select>
+							 </div>
+							 <div class="col-sm-1">
+								 <label>Mark Overview</label>
+							 </div>
+							 <div class="col-sm-3">
+								 <table class="table table-hover">
+									 <tbody>
+										 <tr>
+											 <td>Communication</td>
+											 <td>2</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+									 </tbody>
+								 </table>
+							 </div>
+							 <div class="col-sm-3">
+								 <table class="table table-hover">
+									 <tbody>
+										 <tr>
+											 <td>Communication</td>
+											 <td>2</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+									 </tbody>
+								 </table>
+							 </div>
+							 <div class="col-sm-3">
+								 <table class="table table-hover">
+									 <tbody>
+										 <tr>
+											 <td>Communication</td>
+											 <td>2</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+										 <tr>
+											 <td>Leadership</td>
+											 <td>3</td>
+										 </tr>
+									 </tbody>
+								 </table>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-12" align="center">
+								 <button type="submit" class="btn btn-green">Save</button>
+								 <button type="submit" class="btn btn-green-disabled" disabled>Approve</button>
+								 <button type="ssubmit" class="btn btn-red-disabled" disabled>Refuse</button>
+							 </div>
+						 </div>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+</body>
+<br>
+<footer>
+</footer>
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".js-example-basic-single").select2();
+});
+</script>
