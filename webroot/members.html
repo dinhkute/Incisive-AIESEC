@@ -55,25 +55,38 @@
 	 <div class="container-fluid" style="margin-top:80px">
 		 <div class="row">
 			 <div class="col-sm-12">
-				 <h3><strong>Recruitment Campaign</strong></h3>
+				 <h3><strong>Members Management</strong></h3>
 			 </div>
 		 </div>
 		 <div class="row">
-			 <div class="col-sm-4">
-				 <select name="colors" class="form-control select2-select" multiple data-placeholder="Local Committee">
-					 <option value="rmit">AIESEC RMIT Vietnam</option>
-					 <option value="ftu hcm">AIESEC FTU HCM</option>
-					 <option value="hcm">AIESEC HCM</option>
+			 <div class="col-sm-3">
+				 <select name="colors" class="form-control select2-select" multiple data-placeholder="Member Name">
+					 <option value="lam thu ngoc vy">Lam Thu Ngoc Vy</option>
+					 <option value="lam thu ngoc vy">Lam Thu Ngoc Vy</option>
+					 <option value="lam thu ngoc vy">Lam Thu Ngoc Vy</option>
+					 <option value="lam thu ngoc vy">Lam Thu Ngoc Vy</option>
 				 </select>
 			 </div>
-			 <div class="col-sm-4">
+			 <div class="col-sm-3">
 				  <select name="colors" class="form-control select2-select" multiple data-placeholder="Status">
-					 <option value="running">Running</option>
-					 <option value="draft">Draft</option>
-					 <option value="closed">Closed</option>
+					 <option value="member">Member</option>
+					 <option value="exmember">Ex-Member</option>
 				 </select>
 			 </div>
-			 <div class="col-sm-4">
+			 <div class="col-sm-3">
+				  <select name="colors" class="form-control select2-select" multiple data-placeholder="Department">
+					 <option value="ogv">oGV</option>
+					 <option value="igv">iGV</option>
+					 <option value="oget">oGET</option>
+					 <option value="iget">iGET</option>
+					 <option value="bd">Business Development</option>
+					 <option value="finance">Finance</option>
+					 <option value="tm">Talent Management</option>
+					 <option value="marcomm">MarComm</option>
+				 </select>
+			 </div>
+
+			 <div class="col-sm-3">
 				 <button type="button" class="btn btn-blue"><span class="fa fa-filter"></span></button>
 				 <button type="button" class="btn btn-white"><span class="fa fa-times"></span></button>
 			 </div>
@@ -87,50 +100,39 @@
 					 <thead>
 						 <tr>
 							 <th></th>
-							 <th>Campaign Name</th>
-							 <th>Local Committee</th>
+							 <th>Full Name</th>
 							 <th>Status</th>
-							 <th>Duration</th>
-							 <th>Campaign Leader</th>
-							 <th></th>
+							 <th>Local Committee</th>
+							 <th>Department</th>
 						 </tr>
 					 </thead>
 					 <tbody>
 						 <tr>
 							 <td>
-								 <button type="button" class="btn btn-blue"><span class="fa fa-edit" onClick="location.href='recruitmentcampaignedit.html'"></span></button>
-								 <button type="button" class="btn btn-blue"><span class="fa fa-users" onClick="location.href='campaignapplicant.html'"></span></button>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-eye" onClick="location.href='memberdetail.html'"></span></button>
 							 </td>
-							 <td>Recruitment Sem B 2017</td>
-							 <td>AIESEC RMIT</td>
-							 <td>Draft</td>
-							 <td>01/06/2017 - 30/06/2017</td>
 							 <td>Lam Thu Ngoc Vy</td>
-							 <td><button type="button" class="btn btn-red"><span class="fa fa-trash-o"></span></button></td>
+							 <td>Ex-Member</td>
+							 <td>AIESEC RMIT Vietnam</td>
+							 <td>iGV</td>
 						 </tr>
 						 <tr>
 							 <td>
-								 <button type="button" class="btn btn-blue"><span class="fa fa-edit" onClick="location.href='recruitmentcampaignedit.html'"></span></button>
-								 <button type="button" class="btn btn-blue"><span class="fa fa-users" onClick="location.href='campaignapplicant.html'"></span></button>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-eye" onClick="location.href='memberdetail.html'"></span></button>
 							 </td>
-							 <td>Recruitment Sem B 2017</td>
-							 <td>AIESEC RMIT</td>
-							 <td>Draft</td>
-							 <td>01/06/2017 - 30/06/2017</td>
 							 <td>Lam Thu Ngoc Vy</td>
-							 <td><button type="button" class="btn btn-red"><span class="fa fa-trash-o"></span></button></td>
+							 <td>Member</td>
+							 <td>AIESEC RMIT Vietnam</td>
+							 <td>iGV</td>
 						 </tr>
 						 <tr>
 							 <td>
-								 <button type="button" class="btn btn-blue"><span class="fa fa-edit" onClick="location.href='recruitmentcampaignedit.html'"></span></button>
-								 <button type="button" class="btn btn-blue"><span class="fa fa-users" onClick="location.href='campaignapplicant.html'"></span></button>
+								 <button type="button" class="btn btn-blue"><span class="fa fa-eye" onClick="location.href='memberdetail.html'"></span></button>
 							 </td>
-							 <td>Recruitment Sem B 2017</td>
-							 <td>AIESEC RMIT</td>
-							 <td>Draft</td>
-							 <td>01/06/2017 - 30/06/2017</td>
 							 <td>Lam Thu Ngoc Vy</td>
-							 <td><button type="button" class="btn btn-red"><span class="fa fa-trash-o"></span></button></td>
+							 <td>Member</td>
+							 <td>AIESEC RMIT Vietnam</td>
+							 <td>iGV</td>
 						 </tr>
 					 </tbody>
 				 </table>
