@@ -22,8 +22,8 @@
 	 <script src="js/bootstrap-datetimepicker.min.js"></script>
 	 <script src="js/bootstrap-datetimepicker.js"></script>
 	 <script src="js/bootstrap-datetimepicker.uk.js"></script>
-
-	
+	 <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>	
 </head>
 
 <body>
@@ -68,13 +68,13 @@
 				 </select>
 			 </div>
 			 <div class="col-sm-3">
-				  <select name="colors" class="form-control select2-select" multiple data-placeholder="Status">
+				  <select name="member-status" class="form-control select2-select" multiple data-placeholder="Status">
 					 <option value="member">Member</option>
 					 <option value="exmember">Ex-Member</option>
 				 </select>
 			 </div>
 			 <div class="col-sm-3">
-				  <select name="colors" class="form-control select2-select" multiple data-placeholder="Department">
+				  <select name="department" class="form-control select2-select" multiple data-placeholder="Department">
 					 <option value="ogv">oGV</option>
 					 <option value="igv">iGV</option>
 					 <option value="oget">oGET</option>
@@ -92,10 +92,9 @@
 			 </div>
 		 </div>
 		 <br>
+		 <br>
 		 <div class="row">
 			 <div class="col-sm-12">
-				 <button type="button" class="btn btn-green" onClick="location.href='recruitmentcampaigncreate.html'"><span class="fa fa-plus"></span> New Campaign</button>
-				 <br><br>
 				 <table class="table table-hover">
 					 <thead>
 						 <tr>
