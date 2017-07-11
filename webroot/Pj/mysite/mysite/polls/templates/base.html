@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+        <p><a href="{%url 'polls:index'%}">Index page</a></p>
+        {%if user.is_authenticated%}
+
+        <p><a href="{%url 'polls:changepassword'%}">Change Password</a></p>
+        <p><a href="{%url 'polls:logout'%}">Logout</a></p>
+        <p><a href="{%url 'polls:edit_profile'%}">Edit Profile</a></p>
+        <p><a href="{%url 'polls:profile'%}">Profile</a></p>
+        {% else%}
+        <p><a href="{%url 'polls:register'%}">Register</a></p>
+        <p><a href="polls/login">Login</a></p>
+        {%endif%}
+        <div id="content">
+            {%block content%}
+
+            {%endblock%}
+        </div>
+</body>
+</html>
