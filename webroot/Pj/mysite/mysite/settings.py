@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+
 #from django.core.urlresolvers import reverse_lazy
 
 LOGIN_REDIRECT_URL = '/polls/'
@@ -37,17 +38,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
+    'admin_view_permission',
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',#moi them
     'polls.apps.PollsConfig',
     'nested_inline',
     'froala_editor',
+    'controlcenter',
     'import_export',
+    'rangefilter',
 ]
 
 MIDDLEWARE = [
@@ -135,8 +141,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 1025
 
 LOGIN_URL ='/polls/login'
 
@@ -152,5 +158,69 @@ LOGIN_EXEMPT_URLS = (
     r'^polls/reset-password/done/$',
     r'^polls/reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
     r'^polls/reset-password/complete/$',
+    r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+
 )
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#
+# JET_SIDE_MENU_ITEMS = [
+#     {'app_label': 'auth', 'items': [
+#         {'name': 'group'},
+#         {'name': 'user'},
+#         {'name': 'userprofile'},
+#     ]},
+#     {'app_label': 'recruitment', 'items': [
+#         {'name': 'recruitmentform'},
+#         {'name': 'recruitment'},
+#     ]},
+#     {'app_label': 'project', 'items': [
+#             {'name': 'project'},
+#             {'name': 'publishedevent'},
+#             {'name': 'registerevent'},
+#             {'name': 'subproject'},
+#             {'name': 'task'},
+#     ]},
+# ]
+# JET_SIDE_MENU_ITEMS = [
+#     {'app_label': 'auth', 'items': [
+#         {'name': 'group'},
+#         {'name': 'user'},
+#     ]},
+#     {'app_label': 'polls', 'items': [
+#         {'name': 'project'},
+#         {'name': 'publishedevent'},
+#         {'name': 'recruitmentform'},
+#         {'name': 'recruitment'},
+#         {'name': 'registerevent'},
+#         {'name': 'subproject'},
+#         {'name': 'task'},
+#         {'name': 'userprofile'},
+#     ]},
+# ]
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'vietnamaiesec@gmail.com'
+EMAIL_HOST_PASSWORD = 'leseqhtwsdiobzez'
+
+CONTROLCENTER_DASHBOARDS = (
+    'polls.dashboard.MyDashboard',
+)
+
+ADMIN_VIEW_PERMISSION_MODELS = [
+    'auth.User',
+    'EmailContent',
+    'RegisterEvent',
+    'LocalCommittee',
+    'ProjectOfKind',
+    'PublishedEvent',
+    'Project',
+    'SubProject',
+    'Task',
+    'Creatia',
+    'Questionnaire',
+    'RecruitmentForm',
+    'Recruitment',
+    'UserProfile',
+]

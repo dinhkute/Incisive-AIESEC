@@ -18,10 +18,14 @@ from django.contrib import admin
 from mysite import views as mysite_views
 from django.conf import settings
 from django.conf.urls.static import static
+from controlcenter.views import controlcenter
 
 urlpatterns = [
     url(r'^$', mysite_views.login_redirect, name = 'login_redirect'),
+    url(r'^jet/', include('jet.urls', 'jet')), #jet app
+    url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     url(r'^admin/', admin.site.urls),
+    url(r'^admin/dashboard/', controlcenter.urls),
     url(r'^polls/', include('polls.urls')),
     url(r'^froala_editor/', include('froala_editor.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
