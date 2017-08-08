@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <title>AIESEC Information System</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+	 <link rel="stylesheet" href="css/hovering.css">
+	 <link href = "image/shortlogo.jpg" rel="icon" type="image">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" />
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
+	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+	 <script src="js/tooltip.js"></script>
+	 <!-- <script src="js/myApp.js"></script><script src="js/myApp.js"></script> -->
+	 <!-- <script src="lib/angular.min.js"></script><script src="lib/angular.min.js"></script> -->
+	 <!-- <script src="lib/angular-route.min.js"></script><script src="lib/angular-route.min.js"></script> -->
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+	 <script src="js/bootstrap-datetimepicker.min.js"></script>
+	 <script src="js/bootstrap-datetimepicker.js"></script>
+	 <script src="js/bootstrap-datetimepicker.uk.js"></script>
+	 <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+</head>
+
+<body>
+	 <nav class="navbar navbar-default; navbar navbar-default navbar-fixed-top">
+		 <div class="container-fluid">
+			 <div class="navbar-header; overflow:hidden">
+				 <a class="navbar-brand" href="#"><img src="image/logo.jpg" class="img-responsive" alt="Logo"></a>
+			 </div>
+			 <ul class="nav navbar-nav navbar-right">
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, Vy<span class="caret"></span></a>
+  					 <ul class="dropdown-menu">
+						 <li><a href="#">My Profile</a></li>
+						 <li><a href="#">Log Out</a></li>
+					 </ul>
+				 </li>
+			 </ul>
+		 </div>
+	 </nav>
+	 <div class="container-fluid" style="margin-top:80px">
+		 <div class="row" align="center">
+			 <h1><b>Engage with AIESEC</b></h1>
+		 </div>
+		 <br>
+		 <div class="row">
+			 <div class="col-sm-4">
+					 <div class="w3-card-4">
+						 <div class="view overlay hm-white-slight">
+							 <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-responsive" alt="">
+						 </div>
+						 <div class="w3-container">
+							 <br>
+							 <h4><b>Name of the sub engagement</b></h4>
+							 <p><i class="fa fa-calendar"></i> Start date - end date</p>
+							 <p><i class="fa fa-comments-o"></i> Description of sub engagement</p>
+							 <hr>
+							 <button type="button" class="btn btn-green" data-toggle="modal" data-target="#engagementRegister">Register now!</button>
+							 <a href="#" class="btn btn-blue">View more details</a>
+							 <br><br>
+						 </div>
+					 </div>
+				 </div>
+				 <div class="col-sm-4">
+					 <div class="w3-card-4">
+						 <div class="view overlay hm-white-slight">
+							 <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-responsive" alt="">
+						 </div>
+					 <div class="w3-container">
+						 <br>
+						 <h4><b>Global Passport 4</b></h4>
+						 <p><i class="fa fa-calendar"></i> 15/12/2016 - 30/12/2016</p>
+						 <p><i class="fa fa-comments-o"></i> A language workshop for the French lovers.</p>
+						 <hr>
+						 <a href="#" class="btn btn-green">Register now!</a>
+						 <a href="#" class="btn btn-blue">View more details</a>
+						 <br><br>
+					 </div>
+				 </div>
+			 </div>
+			 <div class="col-sm-4">
+				 <div class="w3-card-4">
+					 <div class="view overlay hm-white-slight">
+						 <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-responsive" alt="">
+					 </div>
+					 <div class="w3-container">
+						 <br>
+						 <h4><b>Global Passport 4 Introduction Day</b></h4>
+						 <p><i class="fa fa-calendar"></i> 13/12/2016</p>
+						 <p><i class="fa fa-comments-o"></i> A language workshop for the French lovers.</p>
+						 <hr>
+						 <a href="#" class="btn btn-green">Register now!</a>
+						 <a href="#" class="btn btn-blue">View more details</a>
+						 <br><br>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal for registration-->
+	 <div id="engagementRegister" class="modal fade" role="dialog">
+		 <div class="modal-dialog">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Engage with AIESEC</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p>Thank you for your interest! Please confirm your registration below:
+						 <ul>
+							 <li>Project Global Passport 4</li>
+							 <li>Date/time: 15/12/2016 - 30/12/2016</li>
+						 </ul>
+					 </p>
+				 </div>
+				 <div class="modal-footer">
+					 <button type="submit" class="btn btn-green" data-dismiss="modal">Confirm registration</button>
+					 <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+</div>
+</body>
+<footer class="container-fluid text-center" style="margin-top:150px">
+	 <hr>
+	 <img src="image/logo.jpg" width="10%" class="img-responsive center-block" alt="Image"></br>
+	 <p><strong>Contact us via&nbsp </strong> <a href="#" class="fa fa-facebook-square" data-toggle="tooltip" title="Facebook"></a>&nbsp <a class="fa fa-instagram" href="#" data-toggle="tooltip" title="Instagram"></a>&nbsp <a class="fa fa-envelope" href="mailto:s3505942@rmit.edu.vn" data-toggle="tooltip" title="Email"></a> </p>
+</footer>
+</html>
