@@ -70,15 +70,17 @@
 }
 
 .btn-white {
-	color: #333;
-	border-color: #ccc;
+	color: #333333;
+	border-color: #cccccc;
+	opacity:0.7;
 }
 
 .btn-white:hover {
-	background: #fff;
-	color: #333;
-	border-color: #ccc;
+	color: #333333;
+	border-color: #cccccc;
+	opacity: 2;
 }
+
 th {
     background-color: #00339b;
     color: white;

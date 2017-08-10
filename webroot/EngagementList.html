@@ -7,24 +7,10 @@
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	 <link rel="stylesheet" href="css/style.css">
-	 <link rel="stylesheet" href="css/hovering.css">
 	 <link href = "image/shortlogo.jpg" rel="icon" type="image">
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" />
-	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
-	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-	 <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
 	 <script src="js/tooltip.js"></script>
-	 <!-- <script src="js/myApp.js"></script><script src="js/myApp.js"></script> -->
-	 <!-- <script src="lib/angular.min.js"></script><script src="lib/angular.min.js"></script> -->
-	 <!-- <script src="lib/angular-route.min.js"></script><script src="lib/angular-route.min.js"></script> -->
-	 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
-	 <script src="js/bootstrap-datetimepicker.min.js"></script>
-	 <script src="js/bootstrap-datetimepicker.js"></script>
-	 <script src="js/bootstrap-datetimepicker.uk.js"></script>
-	 <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-	 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
 </head>
 
@@ -55,6 +41,8 @@
 					 <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-responsive" alt="image">
 					 <hr>
 					 <button type="button" class="btn btn-green" data-toggle="modal" data-target="#engagementRegister">Register now!</button>
+					 <button type="button" class="btn btn-green" data-toggle="modal" data-target="#engagementRegisterFreshProfile">Register now (profile not filled in)!</button>
+					 <button type="button" class="btn btn-green" data-toggle="modal" data-target="#engagementRegisterGuest">Register now (guest)!</button>
 					 <br><br>
 				 </div>
 				 <div class="col col-md-8">
@@ -143,18 +131,76 @@
 					 <h4 class="modal-title">Engage with AIESEC</h4>
 				 </div>
 				 <div class="modal-body">
-					 <p>Thank you for your interest! Please confirm your registration below:
-						 <ul>
-							 <li>Project Global Passport 4</li>
-							 <li>Date/time: 15/12/2016 - 30/12/2016</li>
-							 <li>Price: 600,000 VND</li>
-							 <li>Place: The Coffee House, District 2, Ho Chi Minh City</li>
-						 </ul>
-					 </p>
+					 <p align="center">We are glad to receive your interest in AIESEC, please confirm your registration below.</p>
 				 </div>
 				 <div class="modal-footer">
 					 <button type="submit" class="btn btn-green" data-dismiss="modal">Confirm registration</button>
 					 <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal for registration for user but not filled in all required information in user profile-->
+	 <div id="engagementRegisterFreshProfile" class="modal fade" role="dialog">
+		 <div class="modal-dialog">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Engage with AIESEC</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center">It seems like you haven't filled in your user profile to register, please fill in <a href="#" style="color:blue">here</a>.</p>
+				 </div>
+				 <div class="modal-footer">
+					 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal for registration for guest account-->
+	 <div id="engagementRegisterGuest" class="modal fade" role="dialog">
+		 <div class="modal-dialog">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Engage with AIESEC</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center"><b>Please log in first to AIESEC Portal before begin.</b></p>
+					 <br>
+					 <form id="login">
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Email Address<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="text" id="emailaddress" class="form-control"></input>
+							 </div>
+						 </div>
+						 <Br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="password" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row" align="center">
+							 <button type="submit" class="btn btn-green">Log In</button>
+							 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+						 </div>
+					 </form>
+				 </div>
+				 <div class="modal-footer" align="center">
+					 <p>Not yet registered? <a href="#" style="color:blue">Sign up</a></p>
 				 </div>
 			 </div>
 		 </div>
