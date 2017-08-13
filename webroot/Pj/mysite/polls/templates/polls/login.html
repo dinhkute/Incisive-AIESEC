@@ -3,13 +3,23 @@
 {%block title%}log-in{%endblock%}
 
 {%block content%}
-<h1>Log-in</h1>
-<p>Please, use following form to log-in:</p>
-<form action="." method="post">
-    {{form.as_p}}
-    {%csrf_token%}
-    <p><input type="submit" value ="Login Di nha"></p>
-</form>
 
-<p>If you forget passowrd <a href="{% url 'polls:reset_password'%}">Click here</a></p>
+<div class="container">
+    {% if user.is_authenticated%}
+    <div class="alert alert-info">
+        <strong>User!</strong> have already logged.
+    </div>
+    {%else%}
+    <h1>Log-in</h1>
+    <p>Please, use following form to log-in:</p>
+        <form action="." method="post">
+            {{form.as_p}}
+            {%csrf_token%}
+            <button class="btn btn-info" >Log-in</button>
+        </form>
+
+    <p>If you forget passowrd <a href="{% url 'polls:reset_password'%}">Click here</a></p>
+    {%endif%}
+</div>
+
 {%endblock%}

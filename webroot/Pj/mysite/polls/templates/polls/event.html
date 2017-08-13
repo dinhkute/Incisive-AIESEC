@@ -1,0 +1,141 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+
+<div class="container-fluid" style="margin-top:80px">
+		 <div class="row" align="center">
+			 <h1><b>Engage with AIESEC</b></h1>
+		 </div>
+		 <br><br>
+    {%if event_list%}
+         {%for event in event_list%}
+             <div class="card">
+                 <div class="row">
+                     <div class="col col-md-4" align="center">
+
+                         <img src="{{event.background_image.url}}" class="img-responsive" alt="Your Image" >
+
+
+                         <hr>
+                         <!--Only display 1 button depending on the logged user's case-->
+                         {%if user.is_authenticated%}
+                             <button type="button" class="btn btn-green" data-toggle="modal" data-target="#engagementRegister{{event.id}}">Register now!</button>
+                             <!--<button type="button" class="btn btn-green" data-toggle="modal" data-target="#engagementRegisterFreshProfile{{event.id}}">Register now (profile not filled in)!</button>-->
+                         {%else%}
+                             <button type="button" class="btn btn-green" data-toggle="modal" data-target="#engagementRegisterGuest{{event.id}}">Register now!</button>
+                         {%endif%}
+                         <br><br>
+                     </div>
+                     <div class="col col-md-8">
+                         <h4><b>{{ event.event_name }}</b></h4>
+
+
+                         <p><i class="fa fa-calendar"></i> {{event.pub_date.date}} - {{event.closed_date.date}} | <i class="fa fa-dollar"></i> {{event.price}} | <i class="fa fa-map-marker"></i> {{event.place}}</p>
+                         <p><i class="fa fa-comments-o"></i> Description of sub engagement</p>
+                         <hr>
+
+                         <a href="{% url 'polls:detail_event' event.id %}" class="btn btn-blue" role="button">Detail >>></a>
+                         <div class="collapse" id="projectDetails1{{event.id}}" aria-expanded="false">
+                         {% autoescape off %}{{event.event_description }}{% endautoescape %}
+                         </div>
+                         <a class="btn btn-blue viewMore" href="#projectDetails1{{event.id}}" data-toggle="collapse" aria-expanded="false" aria-controls="projectDetails1{{event.id}}"></a>
+
+                    </div>
+                 </div>
+             </div>
+             <br>
+             <!--Modal for registration for user-->
+            {%if user.is_authenticated%}
+             <div id="engagementRegister{{event.id}}" class="modal fade" role="dialog">
+                 <div class="modal-dialog">
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                             <h4 class="modal-title">Engage with AIESEC</h4>
+                         </div>
+                         <div class="modal-body">
+                             <p align="center">We are glad to receive your interest in AIESEC, please confirm your registration below.</p>
+                         </div>
+                         <div class="modal-footer">
+                             <button type="submit" class="btn btn-green" data-dismiss="modal">Confirm registration</button>
+                             <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <!--&lt;!&ndash;Modal for registration for user but not filled in all required information in user profile&ndash;&gt;-->
+             <!--<div id="engagementRegisterFreshProfile{{event.id}}" class="modal fade" role="dialog">-->
+                 <!--<div class="modal-dialog">-->
+                     <!--&lt;!&ndash; Modal content&ndash;&gt;-->
+                     <!--<div class="modal-content">-->
+                         <!--<div class="modal-header">-->
+                             <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                             <!--<h4 class="modal-title">Engage with AIESEC</h4>-->
+                         <!--</div>-->
+                         <!--<div class="modal-body">-->
+                             <!--<p align="center">It seems like you haven't filled in your user profile to register, please fill in <a href="#" style="color:blue">here</a>.</p>-->
+                         <!--</div>-->
+                         <!--<div class="modal-footer">-->
+                             <!--<button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>-->
+                         <!--</div>-->
+                     <!--</div>-->
+                 <!--</div>-->
+             <!--</div>-->
+         <!--Modal for registration for guest account-->
+            {%else%}
+             <div id="engagementRegisterGuest{{event.id}}" class="modal fade" role="dialog">
+                 <div class="modal-dialog">
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                             <h4 class="modal-title">Engage with AIESEC</h4>
+                         </div>
+                         <div class="modal-body">
+                             <p align="center"><b>Please log in first to AIESEC Portal before begin.</b></p>
+                             <br>
+                             <form id="login">
+                                 <div class="row">
+                                     <div class="col-sm-2">
+                                     </div>
+                                     <div class="col-sm-3">
+                                         Email Address<span class="text-mandatory">*</span>
+                                     </div>
+                                     <div class="col-sm-5">
+                                         <input type="text" id="emailaddress" class="form-control"></input>
+                                     </div>
+                                 </div>
+                                 <Br>
+                                 <div class="row">
+                                     <div class="col-sm-2">
+                                     </div>
+                                     <div class="col-sm-3">
+                                         Password<span class="text-mandatory">*</span>
+                                     </div>
+                                     <div class="col-sm-5">
+                                         <input type="password" id="password" class="form-control"></input>
+                                     </div>
+                                 </div>
+                                 <br>
+                                 <div class="row" align="center">
+                                     <button type="submit" class="btn btn-green">Log In</button>
+                                     <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+                                 </div>
+                             </form>
+                         </div>
+                         <div class="modal-footer" align="center">
+                             <p>Not yet registered? <a href="#" style="color:blue">Sign up</a></p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             {%endif%}
+         {% endfor %}
+    {%else%}
+        <p>No polls are available.</p>
+    {%endif%}
+
+</div>
+{%endblock%}

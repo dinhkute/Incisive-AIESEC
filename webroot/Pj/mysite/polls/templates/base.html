@@ -1,25 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{%block title%}{%endblock%}</title>
+    {% load static %}
+	 <title>AIESEC Information System</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="{% static 'css/style.css'  %}">
+	 <link href = "{% static 'image/shortlogo.jpg' %}" rel="icon" type="image">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script src="{% static 'js/tooltip.js' %}"></script>
+	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	 <style>
+		 body{
+		 margin-top:60px
+		 }
+	 </style>
 </head>
 <body>
-        <p><a href="{%url 'polls:index'%}">Index page</a></p>
-        {%if user.is_authenticated%}
+	 <nav class="navbar navbar-default; navbar navbar-default navbar-fixed-top">
+		 <div class="container-fluid">
+			 <div class="navbar-header; overflow:hidden">
+				 <a class="navbar-brand" href="#"><img src="{% static 'image/logo.jpg' %}" class="img-responsive" alt="Logo"></a>
+			 </div>
+             {%if user.is_authenticated%}
+			 <ul class="nav navbar-nav navbar-right">
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, {{user.first_name}}<span class="caret"></span></a>
+  					 <ul class="dropdown-menu">
+						 <li><a href="{%url 'polls:profile'%}">My Profile</a></li>
+						 <li><a href="{%url 'polls:logout'%}">Log Out</a></li>
+					 </ul>
+				 </li>
+			 </ul>
+             {%else%}
+             <ul class="nav nav-pills navbar-right ">
+                <li data-toggle="modal" data-target="#signin"><a href="{%url 'polls:register'%}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li data-toggle="modal" data-target="#login"><a href="{%url 'polls:login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+             </ul>
 
-        <p><a href="{%url 'polls:changepassword'%}">Change Password</a></p>
-        <p><a href="{%url 'polls:logout'%}">Logout</a></p>
-        <p><a href="{%url 'polls:edit_profile'%}">Edit Profile</a></p>
-        <p><a href="{%url 'polls:profile'%}">Profile</a></p>
-        {% else%}
-        <p><a href="{%url 'polls:register'%}">Register</a></p>
-        <p><a href="polls/login">Login</a></p>
-        {%endif%}
-        <div id="content">
+             {%endif%}
+		 </div>
+	 </nav>
+
+        <div >
             {%block content%}
 
             {%endblock%}
         </div>
+
+<footer class="container-fluid text-center" style="margin-top:480px" >
+	 <hr>
+	 <img src="{% static 'image/logo.jpg' %}" width="10%" class="img-responsive center-block" alt="Image"></br>
+	 <p><strong>Contact us via&nbsp </strong> <a href="#" class="fa fa-facebook-square" data-toggle="tooltip" title="Facebook"></a>&nbsp <a class="fa fa-instagram" href="#" data-toggle="tooltip" title="Instagram"></a>&nbsp <a class="fa fa-envelope" href="mailto:s3505942@rmit.edu.vn" data-toggle="tooltip" title="Email"></a> </p>
+</footer>
 </body>
 </html>
