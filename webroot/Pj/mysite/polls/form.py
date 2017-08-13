@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import (UserProfile,
                      RecruitmentForm,
-                     Questionnaire)
+                     Questionnaire,
+                     RegisterEvent,)
 
 class RegisterForm(UserCreationForm):
     email= forms.EmailField(required=True)
@@ -45,7 +46,11 @@ class RecruitmentDataForm(forms.ModelForm):
 
     class Meta:
         model = RecruitmentForm
-        fields = {'student_name',}
+        fields = {'student_name',
+                  'description',
+                  'skill',
+                  'university',
+                  'year_program'}
 
 class Answer(forms.ModelForm):
     answer = forms.CharField()
@@ -68,3 +73,26 @@ class AuthorForm(forms.ModelForm):
 class ImageUploadForm(forms.Form):
     """Image upload form."""
     image = forms.ImageField()
+
+class EventRegister(forms.ModelForm):
+    customer_name = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class':'form-control',
+            'placeholder':'Your Name...',
+        }
+    ))
+    customer_phone = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class':'form-control',
+            'placeholder':'Your phone number...',
+        }
+    ))
+    customer_email = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class':'form-control',
+            'placeholder':'Your email address...',
+        }
+    ))
+    class Meta:
+        model = RegisterEvent
+        fields = {'customer_name','customer_phone','customer_email',}

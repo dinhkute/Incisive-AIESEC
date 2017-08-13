@@ -2,6 +2,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 # from django.http import HttpResponseRedirect,
 # from django.template import loader
+from django.contrib.auth.models import User
 from .models import (Question,
                      Choice,
                      UserProfile,
@@ -9,6 +10,9 @@ from .models import (Question,
                      RecruitmentForm,
                      Round,
                      Questionnaire,
+                     PublishedEvent,
+                     RegisterEvent,
+                     EmailContentEvent
                      )
 
 from django.http import HttpResponse, HttpResponseRedirect
@@ -21,15 +25,30 @@ from .form import (
     EditProfileForm,
     RecruitmentDataForm,
     Answer,
-    AuthorForm
+    AuthorForm,
+    EventRegister
 )
-from    django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.forms import (inlineformset_factory,
                           modelformset_factory,)
+
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.utils import six
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.utils.html import strip_tags
+
+from django.core.mail import EmailMessage
+from django.template import Context
+from django.template.loader import get_template
 
 class IndexView(generic.ListView):
 
@@ -89,19 +108,64 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
         # create views login
+'''create token'''
+class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
+    def _make_hash_value(self, user, timestamp):
+        return (six.text_type(user.pk) + six.text_type(timestamp)) +  six.text_type(user.is_active)
 
+account_activation_token = AccountActivationTokenGenerator()
 
+'''register user'''
 def register(request):
     if request.method =='POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/polls')
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
+            current_site = get_current_site(request)
+            message = render_to_string('polls/confirm_create_user_via_email.html', {
+                'user':user,
+                'domain':current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
+            mail_subject = 'Activate your blog account.'
+            to_email = form.cleaned_data.get('email')
+            email = EmailMessage(mail_subject, message, to=[to_email])
+            email.send()
+            # return redirect('home')
+            return HttpResponse('Please confirm your email address to complete the registration')
+        else:
+            if request.user:
+                return HttpResponse('Account already exist')
+            else:
+                return HttpResponse('Oops Error')
     else:
         form = RegisterForm()
 
         args = {'form':form}
         return render(request, 'polls/register.html', args)
+
+'''Active user after confirm email'''
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        print (uid)
+        user = User.objects.get(pk=uid)
+        print (user)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        login(request, user)
+        # self.assertFalse(account_activation_token.check_token(user, token))
+        # return redirect('home')
+        return HttpResponse('Thank you for your email confirmation. '
+                            'Now you can login your account.')
+    else:
+        return HttpResponse('Activation link is invalid!')
 
 
 def profile(request):
@@ -121,8 +185,12 @@ def edit_profile(request):
             #handle_uploaded_file(request.FILES['file'])
             #save_image = UserProfile(image=request.FILES['image'])
             #save_image.save()
-            form.save()
+            #postimage = UserProfile(image = request.FILES['image'])
+            #postimage.save()
             form1.save()
+            form.save()
+            #form.save()
+            #form1.save()
             return redirect('/polls/profile')
     else:
         form =  formcombine(instance=request.user)
@@ -224,4 +292,93 @@ def AnswerForm(request, pk):
 
         formset = AuthorFormSet(queryset=Questionnaire.objects.filter(recruitment_form=pk))
     return render(request, 'polls/question.html', {'formset': formset,})
+
+
+'''List of Event'''
+class Event(generic.ListView):
+    template_name = 'polls/event.html'
+    context_object_name = 'event_list'
+
+    def get_queryset(self):
+        '''Return List of event available'''
+        return PublishedEvent.objects.all()
+        # return PublishedEvent.objects.filter(
+        #                                         pub_date__lte = timezone.now()).order_by(
+        #                                         '-pub_date')
+
+
+# """List Detail Event"""
+# class DetailEvent(generic.DetailView):
+#     model = PublishedEvent
+#     template_name = 'polls/detailevent.html'
+#
+#     def get_queryset(self):
+#         """Return detail event"""
+#         return PublishedEvent.objects.filter(
+#                                              pub_date__lte=timezone.now())
+def DetailedEvent(request, pk):
+    if request.method =='POST':
+        form = EventRegister(request.POST)
+        if form.is_valid():
+
+            post = form.save(commit=False)
+            post.customer = request.user
+            email_e = get_object_or_404(EmailContentEvent, event_id = pk)
+            # send_mail(email_e.subject, email_e.content, 'vietnamaiesec@gamil.com', [post.customer_email],
+            #           fail_silently=False)
+            # text_content = strip_tags(email_e.content)
+            # msg = EmailMultiAlternatives(email_e.subject, text_content,
+            #                              'vietnamaiesec@gamil.com', [post.customer_email])
+            # msg.attach_alternative(email_e.content, "text/html")
+            # msg.send()
+            # template = get_template(email_e.content)
+            # context = Context({'user': user, 'other_info': info})
+            # content = template.render(context)
+            # if not user.email:
+            #     raise BadHeaderError('No email address given for {0}'.format(user))
+            msg = EmailMessage(email_e.subject, email_e.content,
+                               'vietnamaiesec@gamil.com', [post.customer_email])
+            msg.content_subtype = "html"
+            # msg.attach_file()
+            # msg.mixed_subtype = 'related'
+            msg.send()
+            post.event_id = pk
+            post.save()
+            return redirect('polls:event')
+    else:
+        form = EventRegister()
+        event = PublishedEvent.objects.get(pk = pk)
+        print (event.event_description)
+        check_user_register = RegisterEvent.objects.filter(customer = request.user, event_id = pk)
+        args = {'form':form,'event':event}
+        # if check_user_register:
+        #     return HttpResponse("You already register")
+        # else:
+        return render(request, 'polls/detailevent.html', args)
+
+
+
+def UserEvent(request, event_id):
+    if  request.method == "POST":
+        form = EventRegister(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.customer = request.user
+            post.event = event_id
+            post.save()
+        return redirect('polls:event')
+    else:
+        form = EventRegister()
+        check_user_register = RegisterEvent.objects.filter(
+            customer = request.user, pk = event_id)
+        args = {'form': form}
+        if check_user_register:
+            return HttpResponse("You already registered")
+        else:
+            return render(request, 'polls/registerevent.html', args)
+
+
+
+
+
 
