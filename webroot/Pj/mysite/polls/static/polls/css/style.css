@@ -1,0 +1,118 @@
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+.btn{
+
+	background: transparent;
+	color: #F2F2F2;
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
+}
+/* Colors */
+.btn-green {
+	color: #00cc33;
+	border-color: #00cc33;
+}
+.btn-green:hover {
+  background: #00cc33;
+  color: #fff;
+  border-color: #00cc33;		
+}
+.btn-green-disabled {
+	color: #00cc33;
+	border-color: #00cc33;
+}
+
+
+.btn-blue {
+	color: #3d90d6;
+	border-color: #3d90d6;
+}
+.btn-blue:hover {
+  background: #3d90d6;
+  color: #fff;
+  border-color: #3d90d6;		
+}
+
+.btn-orange {
+	color: #FF8C00;
+	border-color: #FF8C00;
+}
+.btn-orange:hover {
+  background: #FF8C00;
+  color: #fff;
+  border-color: #FF8C00;		
+}
+
+.btn-red {
+	color: #ff0000;
+	border-color: #ff0000;
+}
+.btn-red:hover {
+  background: #ff0000;
+  color: #fff;
+  border-color: #ff0000;	
+}
+.btn-red-disabled {
+	color: #ff0000;
+	border-color: #ff0000;
+}
+
+.btn-white {
+	color: #333333;
+	border-color: #cccccc;
+	opacity:0.7;
+}
+
+.btn-white:hover {
+	color: #333333;
+	border-color: #cccccc;
+	opacity: 2;
+}
+
+th {
+    background-color: #00339b;
+    color: white;
+}
+
+.text-mandatory {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.passed-icon {
+	color: #00cc33;
+}
+.failed-icon {
+	color: #ff0000;
+}
+.pending-icon {
+	color: #FF8C00;
+}
+.blank-icon {
+	color: #797979;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.viewMore[aria-expanded="false"]:before{
+  content:"Interested? Read more";
+}
+
+.viewMore[aria-expanded="true"]:before{
+  content:"View Less";
+}
+
