@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <title>AIESEC Information System</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+	 <link href = "image/shortlogo.jpg" rel="icon" type="image">
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" />
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+	 <script src="js/tooltip.js"></script>
+	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+</head>
+
+<body>
+	 <nav class="navbar navbar-default; navbar navbar-default navbar-fixed-top">
+		 <div class="container-fluid">
+			 <div class="navbar-header; overflow:hidden">
+				 <a class="navbar-brand" href="index.html"><img src="image/logo.jpg" class="img-responsive" alt="Logo"></a>
+			 </div>
+			 <ul class="nav navbar-nav navbar-right">
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, Vy<span class="caret"></span></a>
+  					 <ul class="dropdown-menu">
+						 <li><a href="#">My Profile</a></li>
+						 <li><a href="#">Log Out</a></li>
+					 </ul>
+				 </li>
+			 </ul>
+		 </div>
+	 </nav>
+	 <div class="container-fluid" style="margin-top:80px">
+		 <div class="row">
+			 <div class="col-sm-12" align="center">
+				 <h3><strong>Nguyen Gia Hien - Application Process</strong></h3>
+				 <br>
+				 <h5><b>- Status -</b></h5>
+			 </div>
+		 </div>
+		 <div class="row">
+			 <div class="col-sm-4">
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-clock-o fa-2x pending-icon" data-toggle="tooltip" title="Pending"></i> 
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-circle-thin fa-2x blank-icon" data-toggle="tooltip" title="Not yet"></i>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-circle-thin fa-2x blank-icon" data-toggle="tooltip" title="Not yet"></i>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-circle-thin fa-2x blank-icon" data-toggle="tooltip" title="Not yet"></i>
+			 </div>
+		 </div>
+		 <div class="row" style="font-size:10pt">
+			 <div class="col-sm-4">
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Application Submitted</p> 
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Round 1 Assessment</p>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Round 2 Assessment</p>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Round 3 Assessment</p>
+			 </div>
+		 </div>
+		 <br>
+		 <div class="row">
+			 <div class="col-sm-12">
+				 <ul class="nav nav-tabs">
+					 <li class="active"><a data-toggle="tab" href="#general-info">General Information</a></li>
+					 <li><a data-toggle="tab" href="#round-1">Application Form</a></li>
+				 </ul>
+			 </div>
+		 </div>
+		 <div class="row">
+			 <div class="col-sm-12" style="background-color:white">
+				 <div class="tab-content">
+					 <div id="general-info" class="tab-pane fade in active">
+						 <form id="generalInfo">
+						 <br><br>
+							 <div class="row">
+								 <div class="col-sm-3">
+									 <label>Full Name</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <input id="fullName" type="text" class="form-control"></input>
+								 </div>
+								 <div class="col-sm-2">
+									 <label>University</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <select id="university" class="js-example-basic-single form-control">
+										 <option value="RMIT">RMIT University Vietnam</option>
+										 <option value="TDT">Ton Duc Thang University</option>
+										 <option value="HIU">Hong Bang University</option>
+										 <option value="FTU">Foreign Trade University</option>
+									 </select>
+								 </div>
+							 </div>
+							 <br>
+							 <div class="row">
+								 <div class="col-sm-3">
+									 <label>Date of Birth (MM/DD/YYYY)</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <input id="dob" type="date" class="form-control"></input>
+								 </div>
+								 <div class="col-sm-2">
+									 <label>Graduation Year</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <input id="gradYear" type="number" class="form-control"></input>
+								 </div>
+							 </div>
+							 <br>
+							 <div class="row">
+								 <div class="col-sm-3">
+									 <label>Gender</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <select id="gender" class="js-example-basic-single form-control">
+										 <option value="F">Female</option>
+										 <option value="M">Male</option>
+									 </select>
+								 </div>
+								 <div class="col-sm-2">
+									 <label>Language</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <select id="language" class="js-example-basic-multiple form-control" multiple="multiple">
+										 <option value="en">English</option>
+										 <option value="th">Thai</option>
+										 <option value="vn">Vietnamese</option>
+										 <option value="fr">French</option>
+									 </select>
+								 </div>
+							 </div>
+							 <br>
+							 <div class="row">
+								 <div class="col-sm-3">
+									 <label>Phone Number</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <input id="phone" type="number" class="form-control"></input>
+								 </div>
+								 <div class="col-sm-2">
+									 <label>Email</label>
+								 </div>
+								 <div class="col-sm-3">
+									 <input id="email" type="email" class="form-control"></input>
+								 </div>
+							 </div>
+							 <br>
+							 <hr>
+							 <div class="row">
+								 <div class="col-sm-12" align="center">
+									 <button type="submit" class="btn btn-green">Save</button>
+								 </div>
+							 </div>
+						 </div>
+					 </form>
+					 <div id="round-1" class="tab-pane fade">
+						 <form id="round1">
+						 <br><br>
+							 <div class="row">
+								 <div class="col-sm-2">
+								 </div>
+								 <div class="col-sm-8">
+									 <label>Q1.Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+									 <textarea class="form-control" rows="4" id="answerQ1">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</textarea>
+									 <br><br>
+									 <label>Q2.Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+									 <textarea class="form-control" rows="4" id="answerQ2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</textarea>
+									 <br><br>
+									 <label>Q3.Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+									 <textarea class="form-control" rows="4" id="answerQ3"></textarea>
+									 <br><br>
+									 <label>Q4.Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+									 <textarea class="form-control" rows="4" id="answerQ4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</textarea>
+									 <br><br>
+									 <label>Q5.Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+									 <textarea class="form-control" rows="4" id="answerQ5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</textarea>
+									 <br><br>
+									 <label>Q6.Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+									 <textarea class="form-control" rows="4" id="answerQ6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</textarea>
+								 </div>
+								 <div class="col-sm-2">
+								 </div>
+							 </div>
+							 <br>
+							 <hr>
+							 <div class="row">
+								 <div class="col-sm-12" align="center">
+									 <button type="submit" class="btn btn-green">Save</button>
+									 <button type="button" class="btn btn-green" data-toggle="modal" data-target="#applicationFormConfirmation">Save and Submit</button>
+								 </div>
+							 </div>
+						 </form>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal for confirmation before submit-->
+	 <div id="applicationFormConfirmation" class="modal fade" role="dialog">
+		 <div class="modal-dialog">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Become our Member</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center">Are you sure you want to submit your application form to AIESEC?</p>
+				 </div>
+				 <div class="modal-footer">
+				 	 <a href="ApplicationFormSubmit.html" class="btn btn-green">Submit</a>
+					 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+</body>
+<footer class="container-fluid text-center" style="margin-top:150px">
+	 <hr>
+	 <img src="image/logo.jpg" width="10%" class="img-responsive center-block" alt="Image"></br>
+	 <p><strong>Contact us via&nbsp </strong> <a href="#" class="fa fa-facebook-square" data-toggle="tooltip" title="Facebook"></a>&nbsp <a class="fa fa-instagram" href="#" data-toggle="tooltip" title="Instagram"></a>&nbsp <a class="fa fa-envelope" href="mailto:s3505942@rmit.edu.vn" data-toggle="tooltip" title="Email"></a> </p>
+</footer>
+<script type="text/javascript"> 
+	 <!--Set default value of inputs by the values already stored in the DB per member-->
+	 document.getElementById("fullName").setAttribute('value','Nguyen Gia Hien');
+	 $("#university option[value='FTU']").attr("selected","selected");
+	 document.getElementById("dob").setAttribute('value','1995-01-08');
+	 document.getElementById("gradYear").setAttribute('value','2017');
+	 document.getElementById("gender").setAttribute('value','Male');
+	 document.getElementById("phone").setAttribute('value','0123456789');
+	 $("#language option[value='fr'], option[value='th']").attr("selected","selected");
+	 document.getElementById("email").setAttribute('value','giahien123@gmail.com');	
+	 
+	 <!--Activate select2 multiple picker-->	 	
+	 $(".js-example-basic-multiple").select2();
+	 
+	 </script>

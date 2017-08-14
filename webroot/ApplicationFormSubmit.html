@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <title>AIESEC Information System</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+	 <link href = "image/shortlogo.jpg" rel="icon" type="image">
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" />
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+	 <script src="js/tooltip.js"></script>
+	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+</head>
+
+<body>
+	 <nav class="navbar navbar-default; navbar navbar-default navbar-fixed-top">
+		 <div class="container-fluid">
+			 <div class="navbar-header; overflow:hidden">
+				 <a class="navbar-brand" href="index.html"><img src="image/logo.jpg" class="img-responsive" alt="Logo"></a>
+			 </div>
+			 <ul class="nav navbar-nav navbar-right">
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, Vy<span class="caret"></span></a>
+  					 <ul class="dropdown-menu">
+						 <li><a href="#">My Profile</a></li>
+						 <li><a href="#">Log Out</a></li>
+					 </ul>
+				 </li>
+			 </ul>
+		 </div>
+	 </nav>
+	 <div class="container-fluid" style="margin-top:80px">
+		 <div class="row">
+			 <div class="col-sm-12" align="center">
+				 <h3><strong>Nguyen Gia Hien - Application Process</strong></h3>
+				 <br>
+				 <h5><b>- Status -</b></h5>
+		 </div>
+		 <div class="row">
+			 <div class="col-sm-4">
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-check-circle fa-2x passed-icon" data-toggle="tooltip" title="Passed"></i> 
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-clock-o fa-2x pending-icon" data-toggle="tooltip" title="Pending"></i>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-circle-thin fa-2x blank-icon" data-toggle="tooltip" title="Not yet"></i>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <i class="fa fa-circle-thin fa-2x blank-icon" data-toggle="tooltip" title="Not yet"></i>
+			 </div>
+		 </div>
+		 <div class="row" style="font-size:10pt">
+			 <div class="col-sm-4">
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Registration to AIESEC Portal</p> 
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Round 1 Assessment</p>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Round 2 Assessment</p>
+			 </div>
+			 <div class="col-sm-1" align="center">
+				 <p>Round 3 Assessment</p>
+			 </div>
+		 </div>
+		 <br><hr>
+		 <div class="row">
+			 <div class="col-sm-2">
+			 </div>
+			 <div class="col-sm-8" align="center">
+				 <h4><b>Thank you</b></h4><br>
+				 <p>Your application has been sent to the recruitment team for further assessment</p>
+				 <p>Feeling not ready? <button type="button" class="btn btn-red" data-toggle="modal" data-target="#applicationWithdraw">Withraw</button></p>
+
+				 <br>
+				 <p>In the meantime, you can always view your recruitment status here or experience AIESEC services <a href="EngagementList.html" style="color:blue; text-decoration:underline">here</a>
+			 </div>
+			 <div class="col-sm-2">
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal for confirmation before submit-->
+	 <div id="applicationWithdraw" class="modal fade" role="dialog">
+		 <div class="modal-dialog">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Withdraw from Recruitment</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center">Are you sure you want to widraw?<br><br>Your application form will not be viewed by the recruiter, if you wish to undo the action, you will need to apply again</p>
+				 </div>
+				 <div class="modal-footer">
+				 	 <a href="CampaignList.html" class="btn btn-red">Withdraw</a>
+					 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+</body>
+<footer class="container-fluid text-center" style="margin-top:150px">
+	 <hr>
+	 <img src="image/logo.jpg" width="10%" class="img-responsive center-block" alt="Image"></br>
+	 <p><strong>Contact us via&nbsp </strong> <a href="#" class="fa fa-facebook-square" data-toggle="tooltip" title="Facebook"></a>&nbsp <a class="fa fa-instagram" href="#" data-toggle="tooltip" title="Instagram"></a>&nbsp <a class="fa fa-envelope" href="mailto:s3505942@rmit.edu.vn" data-toggle="tooltip" title="Email"></a> </p>
+</footer>
