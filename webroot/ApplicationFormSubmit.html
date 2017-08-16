@@ -26,7 +26,8 @@
 			 <ul class="nav navbar-nav navbar-right">
 				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, Vy<span class="caret"></span></a>
   					 <ul class="dropdown-menu">
-						 <li><a href="#">My Profile</a></li>
+						 <li><a href="UserProfilePortal.html">My Profile</a></li>
+						 <li><a href="#changePassword" data-toggle="modal" data-target="#changePassword">Change Password</a></li>
 						 <li><a href="#">Log Out</a></li>
 					 </ul>
 				 </li>
@@ -103,6 +104,61 @@
 				 <div class="modal-footer">
 				 	 <a href="CampaignList.html" class="btn btn-red">Withdraw</a>
 					 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal to change password-->
+	 <div id="changePassword" class="modal fade" role="dialog">
+		 <div class="modal-dialog" style="color:black">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Change Password</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center"><b>Please fill in the required information</b></p>
+					 <br>
+					 <form id="changePassword">
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Current Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="currentPassword" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 New Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="newPassword" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Confirm Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="confirmPassword" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row" align="center">
+							 <button type="button" class="btn btn-green">Confirm</button>
+							 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+						 </div>
+					 </form>
 				 </div>
 			 </div>
 		 </div>

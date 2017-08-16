@@ -26,7 +26,8 @@
 			 <ul class="nav navbar-nav navbar-right">
 				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Hello, Vy<span class="caret"></span></a>
   					 <ul class="dropdown-menu">
-						 <li><a href="#">My Profile</a></li>
+						 <li><a href="UserProfilePortal.html">My Profile</a></li>
+						 <li><a href="#changePassword" data-toggle="modal" data-target="#changePassword">Change Password</a></li>
 						 <li><a href="#">Log Out</a></li>
 					 </ul>
 				 </li>
@@ -44,7 +45,9 @@
 						 <br>
 						 <p><i class="fa fa-calendar"></i> Deadline: 20/12/2017</p>
 						 <hr>
-						 <a href="ApplicationForm.html" class="btn btn-green">Apply now!</a>
+						 <!-- Only display 1 button depending on the logged user/guest-->
+						 <a href="ApplicationForm.html" class="btn btn-green">Apply now!(logged user)</a>
+						 <button class="btn btn-green" data-toggle="modal" data-target="#applyGuest">Apply now! (guest)</button>
 						 <br><br>
 					 </div>
 				 </div>
@@ -63,10 +66,177 @@
 			 </div>
 		 </div>
 	 </div>
+	 <!--Modal for guest account-->
+	 <div id="applyGuest" class="modal fade" role="dialog">
+		 <div class="modal-dialog">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Become AIESEC Member</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center"><b>Please log in first to AIESEC Portal before begin.</b></p>
+					 <br>
+					 <form id="login">
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Email Address<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="email" id="emailaddress" class="form-control"></input>
+							 </div>
+						 </div>
+						 <Br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="password" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row" align="center">
+							 <a href="ApplicationForm.html" class="btn btn-green">Log In</a>
+							 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+						 </div>
+					 </form>
+				 </div>
+				 <div class="modal-footer" align="center">
+					 <p>Not yet registered? <button class="btn btn-blue" data-toggle="modal" data-target="#applySignUp">Sign up</button></p>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal for SignUp to apply to be member-->
+	 <div id="applySignUp" class="modal fade" role="dialog">
+		 <div class="modal-dialog" style="color:black">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Sign Up</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center"><b>Please fill in your email and password to sign up.</b></p>
+					 <br>
+					 <form id="login">
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Email Address<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="email" id="emailaddress" class="form-control"></input>
+							 </div>
+						 </div>
+						 <Br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="password" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Confirm Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="password" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row" align="center">
+							 <a href="ApplicationForm.html" class="btn btn-green">Sign Up</a>
+							 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+						 </div>
+					 </form>
+				 </div>
+				 <div class="modal-footer" align="center">
+					 <p>Already registered? <button id="logInBtn" class="btn btn-blue" data-toggle="modal" data-target="#applyGuest">Log In</button></p>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal to change password-->
+	 <div id="changePassword" class="modal fade" role="dialog">
+		 <div class="modal-dialog" style="color:black">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Change Password</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center"><b>Please fill in the required information</b></p>
+					 <br>
+					 <form id="changePassword">
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Current Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="currentPassword" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 New Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="newPassword" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Confirm Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="confirmPassword" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row" align="center">
+							 <button type="button" class="btn btn-green">Confirm</button>
+							 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+						 </div>
+					 </form>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
 </body>
 <footer class="container-fluid text-center" style="margin-top:150px">
 	 <hr>
 	 <img src="image/logo.jpg" width="10%" class="img-responsive center-block" alt="Image"></br>
 	 <p><strong>Contact us via&nbsp </strong> <a href="#" class="fa fa-facebook-square" data-toggle="tooltip" title="Facebook"></a>&nbsp <a class="fa fa-instagram" href="#" data-toggle="tooltip" title="Instagram"></a>&nbsp <a class="fa fa-envelope" href="mailto:s3505942@rmit.edu.vn" data-toggle="tooltip" title="Email"></a> </p>
 </footer>
+<script type="text/javascript">
+$('.modal').on('show.bs.modal', function () {
+            $('.modal').not($(this)).each(function () {
+                $(this).modal('hide');
+            });
+        });
+</script>
 </html>

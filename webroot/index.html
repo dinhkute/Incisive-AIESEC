@@ -8,15 +8,19 @@
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	 <link rel="stylesheet" href="css/indexstyle.css">
 	 <link href = "image/shortlogo.jpg" rel="icon" type="image">
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" />
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+	 <script src="js/tooltip.js"></script>
 	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
 </head>
 <body>
 	 <div class="container-fluid" style="margin-top:20px">
 		 <div class="row" align="right">
 			 <div class="col-sm-12">
-				 <p><b>Have an account?</b> <button type="button" class="btn btn-whitetrans btn-lg">Login</button></p>
+				 <p><b>Have an account?</b> <button type="button" class="btn btn-whitetrans btn-lg" data-toggle="modal" data-target="#logIn">Login</button> <b>Or</b> <button type="button" class="btn btn-whitetrans btn-lg" data-toggle="modal" data-target="#signUp">Sign Up</button></p>
 			 </div>
 		 </div>
 	 </div>
@@ -31,7 +35,7 @@
 			 <div class="col-sm-1">
 			 </div>
 			 <div class="col-sm-2">
-				 <button type="button" class="btn btn-green btn-lg">Become<br>&nbsp&nbsp&nbspOur Member&nbsp&nbsp&nbsp</button>
+				 <a href="CampaignList.html" class="btn btn-green btn-lg">Become<br>&nbsp&nbsp&nbspOur Member&nbsp&nbsp&nbsp</a>
 			 </div>
 			 <div class="col-sm-2">
 				 <a href="EngagementList.html" class="btn btn-orange btn-lg">Engage in<br>Our Experience</a>
@@ -39,10 +43,122 @@
 		 </div>
 		 <br>
 	 </div>
+	 <!--Modal for login-->
+	 <div id="logIn" class="modal fade" role="dialog">
+		 <div class="modal-dialog" style="color:black">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Log In</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center"><b>Please fill in your email and password to log in.</b></p>
+					 <br>
+					 <form id="login">
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Email Address<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="email" id="emailaddress" class="form-control"></input>
+							 </div>
+						 </div>
+						 <Br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="password" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row" align="center">
+							 <button type="submit" class="btn btn-green">Log In</button>
+							 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+						 </div>
+					 </form>
+				 </div>
+				 <div class="modal-footer" align="center">
+					 <p>Not yet registered? <button class="btn btn-blue" data-toggle="modal" data-target="#signUp">Sign up</button></p>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+	 <!--Modal for SignUp-->
+	 <div id="signUp" class="modal fade" role="dialog">
+		 <div class="modal-dialog" style="color:black">
+			 <!-- Modal content-->
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+					 <h4 class="modal-title">Sign Up</h4>
+				 </div>
+				 <div class="modal-body">
+					 <p align="center"><b>Please fill in your email and password to sign up.</b></p>
+					 <br>
+					 <form id="login">
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Email Address<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="email" id="emailaddress" class="form-control"></input>
+							 </div>
+						 </div>
+						 <Br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="password" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row">
+							 <div class="col-sm-2">
+							 </div>
+							 <div class="col-sm-3">
+								 Confirm Password<span class="text-mandatory">*</span>
+							 </div>
+							 <div class="col-sm-5">
+								 <input type="password" id="password" class="form-control"></input>
+							 </div>
+						 </div>
+						 <br>
+						 <div class="row" align="center">
+							 <button type="submit" class="btn btn-green">Sign Up</button>
+							 <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+						 </div>
+					 </form>
+				 </div>
+				 <div class="modal-footer" align="center">
+					 <p>Already registered? <button class="btn btn-blue" data-toggle="modal" data-target="#logIn">Log In</button></p>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
 </body>
 <footer class="container-fluid text-center" style="margin-top:150px">
 	 <hr>
 	 <img src="image/logo.jpg" width="10%" class="img-responsive center-block" alt="Image"></br>
 	 <p style="color:white"><strong>Contact us via&nbsp </strong> <a href="#" class="fa fa-facebook-square" style="color:white"  data-toggle="tooltip" title="Facebook"></a>&nbsp <a class="fa fa-instagram" style="color:white" href="#" data-toggle="tooltip" title="Instagram"></a>&nbsp <a class="fa fa-envelope" style="color:white" href="mailto:s3505942@rmit.edu.vn" data-toggle="tooltip" title="Email"></a> </p>
 </footer>
+<script type="text/javascript">
+$('.modal').on('show.bs.modal', function () {
+            $('.modal').not($(this)).each(function () {
+                $(this).modal('hide');
+            });
+        });
+</script>
 </html>
